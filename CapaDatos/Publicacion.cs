@@ -9,6 +9,7 @@ namespace CapaDatos
     public class Publicacion
     {
         [Key]
+        public int idPublicacion { get; set; }
         public int Hora { get; set; } // 0-6 6-8 8-12 12-15 3-7 7-12 (se tienen 6 opciones)
         public uint colorFondo { get; set; } // generar colores 7 del arcoiris
         public uint colorTexto { get; set; } // generar colores 7 del arcoiris

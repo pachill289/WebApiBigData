@@ -11,8 +11,9 @@ namespace CapaDatos.Migrations
                 name: "Hechos",
                 columns: table => new
                 {
-                    Hora = table.Column<int>(type: "integer", nullable: false)
+                    idHecho = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Hora = table.Column<int>(type: "integer", nullable: false),
                     colorFondo = table.Column<long>(type: "bigint", nullable: false),
                     colorTexto = table.Column<long>(type: "bigint", nullable: false),
                     Mensaje = table.Column<string>(type: "text", nullable: true),
@@ -21,15 +22,16 @@ namespace CapaDatos.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Hechos", x => x.Hora);
+                    table.PrimaryKey("PK_Hechos", x => x.idHecho);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Publicaciones",
                 columns: table => new
                 {
-                    Hora = table.Column<int>(type: "integer", nullable: false)
+                    idPublicacion = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Hora = table.Column<int>(type: "integer", nullable: false),
                     colorFondo = table.Column<long>(type: "bigint", nullable: false),
                     colorTexto = table.Column<long>(type: "bigint", nullable: false),
                     Mensaje = table.Column<string>(type: "text", nullable: true),
@@ -39,7 +41,7 @@ namespace CapaDatos.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Publicaciones", x => x.Hora);
+                    table.PrimaryKey("PK_Publicaciones", x => x.idPublicacion);
                 });
         }
 

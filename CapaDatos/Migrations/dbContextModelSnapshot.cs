@@ -20,10 +20,13 @@ namespace CapaDatos.Migrations
 
             modelBuilder.Entity("CapaDatos.Hechos", b =>
                 {
-                    b.Property<int>("Hora")
+                    b.Property<int>("idHecho")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
+
+                    b.Property<int>("Hora")
+                        .HasColumnType("integer");
 
                     b.Property<bool>("Like")
                         .HasColumnType("boolean");
@@ -40,20 +43,23 @@ namespace CapaDatos.Migrations
                     b.Property<long>("colorTexto")
                         .HasColumnType("bigint");
 
-                    b.HasKey("Hora");
+                    b.HasKey("idHecho");
 
                     b.ToTable("Hechos");
                 });
 
             modelBuilder.Entity("CapaDatos.Publicacion", b =>
                 {
-                    b.Property<int>("Hora")
+                    b.Property<int>("idPublicacion")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
 
                     b.Property<string>("Genero")
                         .HasColumnType("text");
+
+                    b.Property<int>("Hora")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Ip")
                         .HasColumnType("text");
@@ -70,7 +76,7 @@ namespace CapaDatos.Migrations
                     b.Property<long>("colorTexto")
                         .HasColumnType("bigint");
 
-                    b.HasKey("Hora");
+                    b.HasKey("idPublicacion");
 
                     b.ToTable("Publicaciones");
                 });
