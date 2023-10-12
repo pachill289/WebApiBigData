@@ -14,8 +14,8 @@ namespace CapaDatos.Migrations
                     idHecho = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Hora = table.Column<int>(type: "integer", nullable: false),
-                    colorFondo = table.Column<long>(type: "bigint", nullable: false),
-                    colorTexto = table.Column<long>(type: "bigint", nullable: false),
+                    colorFondo = table.Column<string>(type: "text", nullable: true),
+                    colorTexto = table.Column<string>(type: "text", nullable: true),
                     Mensaje = table.Column<string>(type: "text", nullable: true),
                     Like = table.Column<bool>(type: "boolean", nullable: false),
                     Resultado = table.Column<string>(type: "text", nullable: true)
@@ -36,8 +36,7 @@ namespace CapaDatos.Migrations
                     colorTexto = table.Column<long>(type: "bigint", nullable: false),
                     Mensaje = table.Column<string>(type: "text", nullable: true),
                     Like = table.Column<bool>(type: "boolean", nullable: false),
-                    Ip = table.Column<string>(type: "text", nullable: true),
-                    Genero = table.Column<string>(type: "text", nullable: true)
+                    Ip = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

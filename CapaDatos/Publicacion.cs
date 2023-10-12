@@ -16,6 +16,5 @@ namespace CapaDatos
         public string Mensaje { get; set; } //mensajes positivos y negativos
         public bool Like { get; set; } // es parte de los hechos 0 o 1
         public string Ip { get; set; }
-        public string Genero { get; set; }
     }
 }

@@ -33,7 +33,7 @@ namespace WebApiBigData.Controllers {
         public IActionResult Post([FromBody] Publicaciones pubModel) {
             
             try {
-                _context.InsertarPublication(pubModel);
+                _context.InsertarPublicacion(pubModel);
                 return Ok();
             } catch (Exception e) {
                 return BadRequest(e.Message);

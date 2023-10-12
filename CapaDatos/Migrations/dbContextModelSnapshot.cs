@@ -37,11 +37,11 @@ namespace CapaDatos.Migrations
                     b.Property<string>("Resultado")
                         .HasColumnType("text");
 
-                    b.Property<long>("colorFondo")
-                        .HasColumnType("bigint");
+                    b.Property<string>("colorFondo")
+                        .HasColumnType("text");
 
-                    b.Property<long>("colorTexto")
-                        .HasColumnType("bigint");
+                    b.Property<string>("colorTexto")
+                        .HasColumnType("text");
 
                     b.HasKey("idHecho");
 
@@ -54,9 +54,6 @@ namespace CapaDatos.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
-
-                    b.Property<string>("Genero")
-                        .HasColumnType("text");
 
                     b.Property<int>("Hora")
                         .HasColumnType("integer");

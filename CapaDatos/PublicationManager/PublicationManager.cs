@@ -31,8 +31,7 @@ namespace CapaDatos.PublicationManager
                 colorTexto = row.colorTexto,
                 Mensaje = row.Mensaje,
                 Like = row.Like,
-                Ip = row.Ip,
-                Genero = row.Genero
+                Ip = row.Ip
             }));
             return response;
         }
@@ -46,7 +45,6 @@ namespace CapaDatos.PublicationManager
             nuevaPublicacion.Mensaje = pubModel.Mensaje;
             nuevaPublicacion.Ip = pubModel.Ip;
             nuevaPublicacion.Like = pubModel.Like;
-            nuevaPublicacion.Genero = pubModel.Genero;
             
             _context.Publicaciones.Add(nuevaPublicacion);
             _context.SaveChanges();
