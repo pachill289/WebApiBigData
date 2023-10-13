@@ -32,8 +32,8 @@ namespace CapaDatos.Migrations
                     idPublicacion = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Hora = table.Column<int>(type: "integer", nullable: false),
-                    colorFondo = table.Column<long>(type: "bigint", nullable: false),
-                    colorTexto = table.Column<long>(type: "bigint", nullable: false),
+                    colorFondo = table.Column<string>(type: "text", nullable: true),
+                    colorTexto = table.Column<string>(type: "text", nullable: true),
                     Mensaje = table.Column<string>(type: "text", nullable: true),
                     Like = table.Column<bool>(type: "boolean", nullable: false),
                     Ip = table.Column<string>(type: "text", nullable: true)

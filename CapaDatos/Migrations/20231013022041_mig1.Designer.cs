@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CapaDatos.Migrations
 {
     [DbContext(typeof(dbContext))]
-    [Migration("20231012215312_mig1")]
+    [Migration("20231013022041_mig1")]
     partial class mig1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,11 +69,11 @@ namespace CapaDatos.Migrations
                     b.Property<string>("Mensaje")
                         .HasColumnType("text");
 
-                    b.Property<long>("colorFondo")
-                        .HasColumnType("bigint");
+                    b.Property<string>("colorFondo")
+                        .HasColumnType("text");
 
-                    b.Property<long>("colorTexto")
-                        .HasColumnType("bigint");
+                    b.Property<string>("colorTexto")
+                        .HasColumnType("text");
 
                     b.HasKey("idPublicacion");
 

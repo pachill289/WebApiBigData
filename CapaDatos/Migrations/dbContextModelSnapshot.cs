@@ -67,11 +67,11 @@ namespace CapaDatos.Migrations
                     b.Property<string>("Mensaje")
                         .HasColumnType("text");
 
-                    b.Property<long>("colorFondo")
-                        .HasColumnType("bigint");
+                    b.Property<string>("colorFondo")
+                        .HasColumnType("text");
 
-                    b.Property<long>("colorTexto")
-                        .HasColumnType("bigint");
+                    b.Property<string>("colorTexto")
+                        .HasColumnType("text");
 
                     b.HasKey("idPublicacion");
 
