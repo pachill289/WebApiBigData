@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace CapaDatos.Migrations
 {
-    public partial class mig1 : Migration
+    public partial class mig5 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,11 +14,13 @@ namespace CapaDatos.Migrations
                     idHecho = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Hora = table.Column<int>(type: "integer", nullable: false),
-                    colorFondo = table.Column<string>(type: "text", nullable: true),
-                    colorTexto = table.Column<string>(type: "text", nullable: true),
-                    Mensaje = table.Column<string>(type: "text", nullable: true),
+                    colorFondo = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
+                    colorTexto = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
+                    Mensaje = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),
                     Like = table.Column<bool>(type: "boolean", nullable: false),
-                    Resultado = table.Column<string>(type: "text", nullable: true)
+                    Genero = table.Column<char>(type: "character(1)", nullable: false),
+                    Profesion = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
+                    Resultado = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -32,11 +34,13 @@ namespace CapaDatos.Migrations
                     idPublicacion = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Hora = table.Column<int>(type: "integer", nullable: false),
-                    colorFondo = table.Column<string>(type: "text", nullable: true),
-                    colorTexto = table.Column<string>(type: "text", nullable: true),
-                    Mensaje = table.Column<string>(type: "text", nullable: true),
+                    colorFondo = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
+                    colorTexto = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
+                    Mensaje = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),
                     Like = table.Column<bool>(type: "boolean", nullable: false),
-                    Ip = table.Column<string>(type: "text", nullable: true)
+                    Ip = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    Genero = table.Column<char>(type: "character(1)", nullable: false),
+                    Profesion = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {

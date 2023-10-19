@@ -1,5 +1,5 @@
 ﻿using CapaDatos;
-using CapaDatos.PublicationManager;
+using CapaDatos.DataManager;
 using CapaEntidad;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,30 +10,60 @@ using System.Threading.Tasks;
 namespace WebApiBigData.Controllers {
     public class PublicacionController : Controller {
 
-        private readonly PublicationManager _context;
+        private readonly DataManager _context;
         public PublicacionController(dbContext context) {
-            _context = new PublicationManager(context);
+            _context = new DataManager(context);
         }
 
-        // GET: api/<UsuarioController>
+        // GET
         [HttpGet]
         [Route("ObtenerPublicaciones")]
-        public IActionResult Get() {
+        public IActionResult GetPublicaciones() {
             
             try {
-                IEnumerable<Publicaciones> usuarios = _context.ObtenerPublicaciones();
-                return Ok(usuarios);
+                IEnumerable<Publicaciones> publicaciones = _context.ObtenerPublicaciones();
+                return Ok(publicaciones);
             } catch (Exception e) {
                 return BadRequest(e.Message);
             }
         }
-        // POST api/<UsuarioController>
+        [HttpGet]
+        [Route("ObtenerHechos")]
+        public IActionResult GetHechos()
+        {
+
+            try
+            {
+                IEnumerable<HechosModel> hechos = _context.ObtenerHechos();
+                return Ok(hechos);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        // POST
         [HttpPost]
         [Route("RegistrarPublicacion")]
-        public IActionResult Post([FromBody] Publicaciones pubModel) {
+        public IActionResult Post([FromBody] Publicaciones pubModel)
+        {
+
+            try
+            {
+                _context.InsertarPublicacion(pubModel);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        [HttpPost]
+        [Route("RegistrarHecho")]
+        public IActionResult Post([FromBody] HechosModel hechoModel) {
             
             try {
-                _context.InsertarPublicacion(pubModel);
+                _context.InsertarHecho(hechoModel);
                 return Ok();
             } catch (Exception e) {
                 return BadRequest(e.Message);

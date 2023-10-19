@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj" />
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj" />
     <ProjectReference Include="..\CapaLogica\CapaLogica.csproj" />
   </ItemGroup>
 
