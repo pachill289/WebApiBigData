@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace CapaDatos.Migrations
 {
-    public partial class mig5 : Migration
+    public partial class mig6 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,7 +17,6 @@ namespace CapaDatos.Migrations
                     colorFondo = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
                     colorTexto = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
                     Mensaje = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),
-                    Like = table.Column<bool>(type: "boolean", nullable: false),
                     Genero = table.Column<char>(type: "character(1)", nullable: false),
                     Profesion = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
                     Resultado = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false)

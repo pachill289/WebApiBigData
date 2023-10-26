@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CapaDatos.Migrations
 {
     [DbContext(typeof(dbContext))]
-    [Migration("20231019171057_mig5")]
-    partial class mig5
+    [Migration("20231026044139_mig6")]
+    partial class mig6
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,9 +32,6 @@ namespace CapaDatos.Migrations
 
                     b.Property<int>("Hora")
                         .HasColumnType("integer");
-
-                    b.Property<bool>("Like")
-                        .HasColumnType("boolean");
 
                     b.Property<string>("Mensaje")
                         .IsRequired()

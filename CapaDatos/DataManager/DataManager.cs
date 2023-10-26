@@ -82,9 +82,7 @@ namespace CapaDatos.DataManager
             nuevoHecho.Mensaje = hechoModel.Mensaje;
             nuevoHecho.Profesion = hechoModel.Profesion;
             nuevoHecho.Genero = hechoModel.Genero;
-            nuevoHecho.Like = hechoModel.Like;
             nuevoHecho.Resultado = hechoModel.Resultado;
-
             _context.Hechos.Add(nuevoHecho);
             _context.SaveChanges();
         }

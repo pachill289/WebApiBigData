@@ -25,8 +25,8 @@ namespace CapaDatos
         [Required]
         [StringLength(500)]
         public string Mensaje { get; set; } //mensajes positivos y negativos
-        [Required]
-        public bool Like { get; set; } // es parte de los hechos 0 o 1
+        /*[Required]
+        public bool Like { get; set; } // es parte de los hechos 0 o 1*/
         [Required]
         public char Genero { get; set; }
         [Required]

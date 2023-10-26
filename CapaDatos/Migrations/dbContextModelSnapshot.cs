@@ -31,9 +31,6 @@ namespace CapaDatos.Migrations
                     b.Property<int>("Hora")
                         .HasColumnType("integer");
 
-                    b.Property<bool>("Like")
-                        .HasColumnType("boolean");
-
                     b.Property<string>("Mensaje")
                         .IsRequired()
                         .HasMaxLength(500)
